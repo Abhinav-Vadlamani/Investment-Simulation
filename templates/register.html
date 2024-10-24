@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page- Investment Simulation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230624/pngtree-digital-financial-investment-diagram-in-blue-3d-render-image_3671343.jpg'); /* Replace with your image path */
+            background-size: cover;  /* Ensure the image covers the whole screen */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .register-box {
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            /* background: rgba(255, 255, 255, 0.2);  Transparent background */
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: white;  /* White text */
+            font-size: 36px;  /* Increase font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* Add text shadow for better contrast */
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 80%;
+            max-width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            /*margin-bottom: 40px;*/
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .register-button {
+            display: inline-block;
+            background: none;  /* Remove background */
+            color: white;  /* Blue text color */
+            border: none;  /* Remove border */
+            text-decoration: underline;  /* Underline the text to indicate it's clickable */
+            cursor: pointer;  /* Change cursor to pointer */
+            margin: 15px 0;  /* Add some space above the register button */
+        }
+        .flash_message{
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "register-container">
+        <div class = "register-box">
+            <h1>Create Account</h1>
+            {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash_message">
+                        {% for message in messages %}
+                                <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <form action="/register" method = "POST" class = "form-group">
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <button type="submit">Register</button> 
+            </form>
+            <a class="register-button" href="/">Already have an account? Click here to go back.</a>
+        </div>
+    </div>
+</body>
+</html>
