@@ -1,5 +1,4 @@
 # imports
-# Accounting: DCF Analysis, Comparable Analysis, Asset-Based Valuation, LBO Valuation 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
