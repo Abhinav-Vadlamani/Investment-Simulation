@@ -12,7 +12,7 @@
             height: 100%;
             font-family: Arial, sans-serif;
         }
-        .login-container {
+        .menu-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,24 +23,29 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-        .flash_message{
-            color: green;
-            text-align: start;
-            margin-bottom: 20px;
+        .menu-container button{
+            flex: 1;
+            font-size: 20px;
+            padding: 50px 50px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        {%with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="flash_message">
-                    {% for message in messages %}
-                       <p>{{message}}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
+    <div class="menu-container">
+        <button onclick="window.location.href='quantitative'">Quantitative Analysis</button>
+        <button onclick="window.location.href='accounting'">Accounting-Based Analysis</button>
+        <button onclick="window.location.href='qualitative'">Qualitative Analysis</button>
     </div>
 </body>
 </html>

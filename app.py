@@ -1,4 +1,5 @@
 # imports
+# Accounting: DCF Analysis, Comparable Analysis, Asset-Based Valuation, LBO Valuation 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
@@ -14,10 +15,6 @@ client = MongoClient(uri, server_api=ServerApi('1'))
 # Databases
 db = client['InvestmentSimulation']
 users_collection = db['User info']
-
-@app.route('/simulation', methods=['GET', 'POST'])
-def simulation():
-    return render_template('simulation.html')
 
 # login page
 @app.route('/', methods=['GET', 'POST'])
@@ -75,6 +72,22 @@ def register():
     
     # render register html file
     return render_template('register.html')
+
+@app.route('/simulation', methods=['GET', 'POST'])
+def simulation():
+    return render_template('simulation.html')
+
+@app.route('/quantitative')
+def quantitative():
+    return render_template('Quantitative/quantitative.html')
+
+@app.route('/accounting')
+def accounting():
+    return render_template('Accounting/accounting.html')
+
+@app.route('/qualitative')
+def qualitative():
+    return render_template('Qualitative/qualitative.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

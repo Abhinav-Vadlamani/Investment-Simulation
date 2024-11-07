@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lagn="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Simulation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://img.freepik.com/free-vector/wavy-elegant-lines-blue-background_78370-3228.jpg'); /*background image*/
+            background-size: cover;  /* image covers the whole screen */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white; 
+            font-size: 45px; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+        .button-container {
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 40px 80px;
+            font-size: 20px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pick an Option!</h1>
+    <div class="button-container">
+        <button class="button">DCF Analysis</button>
+        <button class="button">Comparable Analysis</button>
+        <button class="button">Asset-Based Valuation</button>
+        <button class="button">LBO Valuation</button>
+    </div>
+</body>
+</html>
